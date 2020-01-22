@@ -1,3 +1,5 @@
+"use strict";
+// step 4^
 
 /*
    New Perspectives on HTML5 and CSS3, 7th Edition
@@ -5,14 +7,26 @@
    Case Problem 2
 
    Today at the Union Script
-   Author: 
-   Date:   
+   Author: brandon santizo
+   Date:   01/16/2020
    
    This script uses the getEvent() function to return the
    HTML code containin the daily events at the Bridger College
    student union.
 
 */
+// step 5
+var thisDate= new Date ();
+// step 6
+var dateString = thisDate.toLocaleDateString();
+// step 7
+var dateHTML = "<h2>" + dateString +"</h2>";
+// step 8
+var thisDay = thisDate.getDay();
+// step 9
+var eventHTML = getEvent(thisDay);
+// step 10
+document.getElementById("unionToday").insertAdjacentHTML("beforeend", dateHTML + eventHTML);
 
 
 
