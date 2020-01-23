@@ -11,9 +11,30 @@
 
 */
 
+var minsLeft = 30;
+// step 5
+var secsLeft = 0;
+// step 6
+var timeLeft = minsLeft * 60 + secsLeft;
+// step 7
 
+var clockID = setInterval("countdown()", 1000);
 
-
+function countdown(){
+   var minsLeft = Math.floor(timeLeft / 60);
+   var secsLeft = timeLeft  - 60 * minsLeft; 
+   var minsString = addLeadingZero(minsLeft);
+   var secsString = addLeadingZero(secsLeft);
+   document.getElementById("minutes").innerHTML = minsString;
+   document.getElementById("seconds").innerHTML = secsString;
+   checkTimer();
+   timeLeft--;
+}
+// step 8 A-G
+function stopClock(){
+   document.getElementById("TimeHead").insertAdjacentHTML("beforeend","<br />(Order Expired)");
+   clearInterval(clockID);
+}
 
 
 /* ------------------------------------------------- */
